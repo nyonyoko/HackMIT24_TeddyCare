@@ -1,9 +1,8 @@
 import { clerkClient } from '@clerk/clerk-sdk-node';
+import Link from 'next/link';
 import React from 'react';
 
-const PatientList: React.FC =  async() => {
-  const patients = Array.from({ length: 20 }, (_, i) => `Patient ${i + 1}`);
-
+const PatientList: React.FC = async () => {
   const orgs = await clerkClient.organizations.getOrganizationList();
 
   if (!orgs) {
@@ -23,23 +22,27 @@ const PatientList: React.FC =  async() => {
   return (
     <div style={{ height: '100%', overflowY: 'auto' }}>
       {users.data.map((user, index) => (
-        <button
+        <Link 
+          href={`/doctor/patient-info`} 
           key={index}
-          className="round"
-          style={{
-            display: 'block',
-            width: '100%',
-            padding: '10px',
-            margin: '5px 0',
-            textAlign: 'left',
-            border: 'none',
-            cursor: 'pointer',
-            fontSize: '20px',
-            backgroundColor: 'var(--milky-way)',
-          }}
-        > 
-          {user.publicUserData?.firstName} {user.publicUserData?.lastName}
-        </button>
+        >
+          <button
+            className="round"
+            style={{
+              display: 'block',
+              width: '100%',
+              padding: '10px',
+              margin: '5px 0',
+              textAlign: 'left',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '20px',
+              backgroundColor: 'var(--milky-way)',
+            }}
+          > 
+            {user.publicUserData?.firstName} {user.publicUserData?.lastName}
+          </button>
+        </Link>
       ))}
     </div>
   );
