@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Terra from 'terra-api';
-import { PrismaClient } from '@prisma/client';
+import fs from 'fs/promises';
+import path from 'path';
 
 const terra = new Terra(
   process.env.TERRA_DEV_ID ?? "",
   process.env.TERRA_API_KEY ?? "",
   process.env.TERRA_WEBHOOK_SECRET ?? ""
 );
-
-const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
   try {
@@ -23,23 +22,18 @@ export async function POST(req: NextRequest) {
     console.log('Received webhook data:');
     console.log(JSON.stringify(data, null, 2));
 
-    // Store the data in the database
+    // Save the data to a JSON file
     const userId = data.user.user_id;
-    const storedData = await prisma.terraData.create({
-      data: {
-        userId: userId,
-        type: data.type,
-        data: JSON.stringify(data), // Stringify the JSON data
-      },
-    });
+    const fileName = `${userId}_${Date.now()}.json`;
+    const filePath = path.join(process.cwd(), 'app', 'api', 'terra', fileName);
 
-    console.log('Stored data in database with ID:', storedData.id);
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+
+    console.log('Stored data in file:', filePath);
 
     return NextResponse.json({ message: 'Webhook received, processed, and stored' }, { status: 200 });
   } catch (error) {
     console.error('Error processing webhook:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
