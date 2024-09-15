@@ -1,3 +1,5 @@
+import FullName from './name'
+
 export default async function () {
     return (
         <>
@@ -12,7 +14,7 @@ export default async function () {
         className="flex-grow flex column"
       >
         <h3 style={{paddingLeft: 20}}>Patient Name</h3>
-        <h1 style={{ fontSize: 40, paddingLeft: 20 }}>Clark Kent</h1>
+        <FullName/>
         <div className="box-section flex-grow">
           Description of patient
         </div>
