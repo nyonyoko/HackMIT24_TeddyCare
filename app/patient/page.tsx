@@ -1,22 +1,17 @@
-'use client'
 
-import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { PatientForm } from './components/form'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '@/components/ui/dialog'
 
-export default function PatientPage() {
-  const searchParams = useSearchParams()
-
-  useEffect(() => {
-    const authStatus = searchParams.get('auth')
-    if (authStatus === 'success') {
-      console.log('Device connected successfully')
-      // Handle successful connection (e.g., show a success message, update user state)
-    } else if (authStatus === 'failure') {
-      console.log('Device connection failed')
-      // Handle failed connection (e.g., show an error message)
-    }
-  }, [searchParams])
+import { ProfileForm } from './components/form'
+import { Widget } from './components/TerraWidget'
 
   return (
     <>
@@ -31,7 +26,7 @@ export default function PatientPage() {
         </div>
         <div className="flex">
           <div className="box-section fifty" id="upcoming">
-            <h2>Upcoming Appointments</h2>
+            <Widget />
           </div>
           <div className="box-section fifty" id="alerts">
             <h2>Medical Alerts</h2>
@@ -44,8 +39,10 @@ export default function PatientPage() {
           style={{ minHeight: "30vh" }}
         >
           <div style={{ alignContent: "center" }}>
-            <h1>Chat with Teddy!</h1>
-            <h3>Feeling under the weather? I can help!</h3>
+            <Link href="/chat">
+              <h1>Chat with Teddy!</h1>
+              <h3>Feeling under the weather? I can help!</h3>
+            </Link>
           </div>
           <img
             src="teddy.png"
