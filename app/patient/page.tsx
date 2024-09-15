@@ -10,9 +10,8 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog'
 
-import { ProfileForm } from './components/form'
 import { Widget } from './components/TerraWidget'
-
+  export default function Patient() {
   return (
     <>
   <div className="main-container flex column" style={{}}>
