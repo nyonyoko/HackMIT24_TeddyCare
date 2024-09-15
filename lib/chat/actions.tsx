@@ -47,12 +47,16 @@ async function submitUserMessage(content: string) {
   let textNode: undefined | React.ReactNode
 
   const result = await streamUI({
-    model: openai('meta/llama-3.1-8b-instruct'),
+    model: openai('rohan/tune-gpt-4o'),
     initial: <SpinnerMessage />,
     system:
       session.orgSlug === 'doctor'
-        ? `You are assisting a doctor. Provide technical medical information and treatment suggestions based on this health information: ${JSON.stringify(metadata)}. Today is ${new Date().toDateString()}, use this and the birthday when calculating the patient's age.`
-        : `You are assisting a patient. Help diagnose any issues or give health advice in summary based on this personal health information: ${JSON.stringify(metadata)}. Today is ${new Date().toDateString()}, use this and the birthday when calculating the patient's age.`,
+        ? `You are assisting a doctor like a nurse. Provide technical medical information and treatment suggestions based on this health information: ${JSON.stringify(metadata)}. 
+        Today is ${new Date().toDateString()}, use this and the birthday when calculating the patient's age.
+        Only give health advice. Don't do anything else. Be professional and passionate.`
+        : `You are assisting a patient like a nurse. Help diagnose any issues or give health advice in summary based on this personal health information: ${JSON.stringify(metadata)}. 
+        Today is ${new Date().toDateString()}, use this and the birthday when calculating the patient's age. 
+        Only give health advice. Don't do anything else. Be professional and passionate.`,
     messages: [
       ...aiState.get().messages.map((message: any) => ({
         role: message.role,
