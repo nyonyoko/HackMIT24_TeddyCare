@@ -15,11 +15,31 @@ import { Stocks } from '@/components/stocks/stocks'
 import { nanoid } from '@/lib/utils'
 import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
 import { Chat, Message } from '@/lib/types'
+import { PrismaClient } from '@prisma/client'
+import { userData } from "./userData"
 
 const openai = createOpenAI({
   baseURL: 'https://proxy.tune.app',
   apiKey: process.env.TUNE_STUDIO_API_KEY
 })
+
+const prisma = new PrismaClient()
+
+async function getUserData(userId: string) {
+  const terraData = await prisma.terraData.findMany({
+    where: {
+      userId: userId,
+      type: 'body',
+    },
+    orderBy: { createdAt: 'desc' },
+    take: 1, // Get the most recent entry
+  });
+
+  if (terraData.length > 0) {
+    return JSON.parse(terraData[0].data);
+  }
+  return null;
+}
 
 async function submitUserMessage(content: string) {
   'use server'
@@ -30,6 +50,8 @@ async function submitUserMessage(content: string) {
   const userRole = session.orgSlug === 'doctor' ? 'doctor' : 'patient'
 
   console.log(JSON.stringify(session))
+
+  // Fetch user data
 
   aiState.update({
     ...aiState.get(),
@@ -53,9 +75,11 @@ async function submitUserMessage(content: string) {
       session.orgSlug === 'doctor'
         ? `You are assisting a doctor like a nurse. Provide technical medical information and treatment suggestions based on this health information: ${JSON.stringify(metadata)}. 
         Today is ${new Date().toDateString()}, use this and the birthday when calculating the patient's age.
+        Additionally, here is the most recent health data for the patient: ${JSON.stringify(userData)}
         Only give health advice. Don't do anything else. Be professional and passionate.`
         : `You are assisting a patient like a nurse. Help diagnose any issues or give health advice in summary based on this personal health information: ${JSON.stringify(metadata)}. 
         Today is ${new Date().toDateString()}, use this and the birthday when calculating the patient's age. 
+        Additionally, here is your most recent health data: ${JSON.stringify(userData)}
         Only give health advice. Don't do anything else. Be professional and passionate.`,
     messages: [
       ...aiState.get().messages.map((message: any) => ({
