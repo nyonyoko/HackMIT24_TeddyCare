@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="TeddyCare Logo" width="200" height="200">
+</p>
+
 <a href="https://teddycare.vercel.app/">
   <h1 align="center">TeddyCare</h1>
 </a>
