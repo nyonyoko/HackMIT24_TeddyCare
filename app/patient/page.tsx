@@ -11,14 +11,17 @@ import {
 } from '@/components/ui/dialog'
 
 import { Widget } from './components/TerraWidget'
+import Welcome from './components/welcome'
 
 
 export default async function () {
+
+
   return (
     <>
   <div className="main-container flex column" style={{}}>
     <div className="heading flex" id="name-heading" style={{ fontWeight: 900 }}>
-      Welcome back,.
+      <Welcome/>
     </div>
     <div className="flex">
       <div className="flex column" style={{ flexBasis: "60%" }}>
