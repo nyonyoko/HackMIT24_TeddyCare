@@ -1,11 +1,14 @@
-import FullName from './name'
+import { clerkClient } from '@clerk/clerk-sdk-node'
 
-export default async function () {
-    return (
+export default async function Page({ params }: { params: { id: string } }) {
+
+  const user = await clerkClient.users.getUser(params.id);
+
+  return (
         <>
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patient Information</title>
+  <title>{params.id}</title>
   <link rel="stylesheet" href="styles.css" />
   <div className="main-container flex column">
     <div className="flex" style={{ height: "30vh" }}>
@@ -14,7 +17,7 @@ export default async function () {
         className="flex-grow flex column"
       >
         <h3 style={{paddingLeft: 20}}>Patient Name</h3>
-        <FullName/>
+        <h1 style={{paddingLeft: 20}}>{user.fullName}</h1>
         <div className="box-section flex-grow">
           Description of patient
         </div>

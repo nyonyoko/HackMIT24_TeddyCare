@@ -23,7 +23,7 @@ const PatientList: React.FC = async () => {
     <div style={{ height: '100%', overflowY: 'auto' }}>
       {users.data.map((user, index) => (
         <Link 
-          href={`/doctor/patient-info`} 
+          href={`/doctor/patient-info/${user.publicUserData?.userId}`} 
           key={index}
         >
           <button
