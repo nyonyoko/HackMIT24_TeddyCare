@@ -1,5 +1,4 @@
 <a href="https://teddycare.vercel.app/">
-  <img alt="TeddyCare: AI-powered healthcare assistant" src="https://teddycare.vercel.app/opengraph-image.png">
   <h1 align="center">TeddyCare</h1>
 </a>
 
