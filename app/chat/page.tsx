@@ -3,17 +3,19 @@ import { Chat } from '@/components/chat'
 import { AI } from '@/lib/chat/actions'
 import { getMissingKeys } from '@/app/actions'
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Next.js AI Chatbot'
 }
 
 export default async function IndexPage() {
   const id = nanoid()
-  const missingKeys = await getMissingKeys()
+  //const missingKeys = await getMissingKeys()
 
   return (
     <AI initialAIState={{ chatId: id, messages: [] }}>
-      <Chat id={id} missingKeys={missingKeys} />
+      <Chat id={id} missingKeys={[]} />
     </AI>
   )
 }
