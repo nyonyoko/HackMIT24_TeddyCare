@@ -20,6 +20,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.9.0(react-hook-form@7.53.0(react@18.3.1))
+      '@prisma/client':
+        specifier: ^5.19.1
+        version: 5.19.1(prisma@5.19.1)
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -53,6 +56,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tryterra/terra-ui':
+        specifier: ^0.2.0
+        version: 0.2.0(react@18.3.1)
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.3.1(next@14.2.6(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -62,12 +68,18 @@ importers:
       ai:
         specifier: ^3.3.17
         version: 3.3.17(openai@4.56.0(zod@3.23.8))(react@18.3.1)(sswr@2.1.0(svelte@4.2.19))(svelte@4.2.19)(vue@3.4.38(typescript@5.5.4))(zod@3.23.8)
+      chart.js:
+        specifier: ^4.4.4
+        version: 4.4.4
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      fit-file-parser:
+        specifier: ^1.20.0
+        version: 1.20.0
       framer-motion:
         specifier: ^11.3.30
         version: 11.3.30(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -89,9 +101,15 @@ importers:
       openai:
         specifier: ^4.56.0
         version: 4.56.0(zod@3.23.8)
+      prisma:
+        specifier: ^5.19.1
+        version: 5.19.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
+      react-chartjs-2:
+        specifier: ^5.2.0
+        version: 5.2.0(chart.js@4.4.4)(react@18.3.1)
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
@@ -119,6 +137,9 @@ importers:
       sonner:
         specifier: ^1.5.0
         version: 1.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      terra-api:
+        specifier: ^1.4.5
+        version: 1.4.5
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -347,6 +368,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@kurkle/color@0.3.2':
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
+
   '@next/env@14.2.6':
     resolution: {integrity: sha512-bs5DFKV+08EjWrl8EB+KKqev1ZTNONH1vFCaHh911aaB362NnP32UDTbE9VQhyiAgbFqJsfDkSxFERNDDb3j0g==}
 
@@ -426,6 +450,30 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@prisma/client@5.19.1':
+    resolution: {integrity: sha512-x30GFguInsgt+4z5I4WbkZP2CGpotJMUXy+Gl/aaUjHn2o1DnLYNTA+q9XdYmAQZM8fIIkvUiA2NpgosM3fneg==}
+    engines: {node: '>=16.13'}
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+
+  '@prisma/debug@5.19.1':
+    resolution: {integrity: sha512-lAG6A6QnG2AskAukIEucYJZxxcSqKsMK74ZFVfCTOM/7UiyJQi48v6TQ47d6qKG3LbMslqOvnTX25dj/qvclGg==}
+
+  '@prisma/engines-version@5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3':
+    resolution: {integrity: sha512-xR6rt+z5LnNqTP5BBc+8+ySgf4WNMimOKXRn6xfNRDSpHvbOEmd7+qAOmzCrddEc4Cp8nFC0txU14dstjH7FXA==}
+
+  '@prisma/engines@5.19.1':
+    resolution: {integrity: sha512-kR/PoxZDrfUmbbXqqb8SlBBgCjvGaJYMCOe189PEYzq9rKqitQ2fvT/VJ8PDSe8tTNxhc2KzsCfCAL+Iwm/7Cg==}
+
+  '@prisma/fetch-engine@5.19.1':
+    resolution: {integrity: sha512-pCq74rtlOVJfn4pLmdJj+eI4P7w2dugOnnTXpRilP/6n5b2aZiA4ulJlE0ddCbTPkfHmOL9BfaRgA8o+1rfdHw==}
+
+  '@prisma/get-platform@5.19.1':
+    resolution: {integrity: sha512-sCeoJ+7yt0UjnR+AXZL7vXlg5eNxaFOwC23h0KvW1YIXUoa7+W2ZcAUhoEQBmJTW4GrFqCuZ8YSP0mkDa4k3Zg==}
 
   '@radix-ui/number@1.1.0':
     resolution: {integrity: sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==}
@@ -818,6 +866,11 @@ packages:
   '@radix-ui/rect@1.1.0':
     resolution: {integrity: sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==}
 
+  '@react-buddy/ide-toolbox@2.4.0':
+    resolution: {integrity: sha512-TWHX6gwa0Gop7215uHhjFMbYLLdjM/b9rr0wYE3E0m7GNJ56gbPpbZiq86w9uI8zksl827acqGeT437MkuO64w==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
 
@@ -828,6 +881,9 @@ packages:
     resolution: {integrity: sha512-ZvOCjUbsJBjL9CxQBn+VEnFpouzuKhxh2dH8xMIWHILL+HfOYtlAkWcyoon8LlzE53d2Yo6YO6pahKKNW3q1YQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
+
+  '@tryterra/terra-ui@0.2.0':
+    resolution: {integrity: sha512-Oc8liYFvaFVk1kJ2C33+CCfYWCYM6d4p42NrxR+NhIlhvPPJ7WN0rVl4zFyknQeg9LwiiegY4mS/ovqumX1gzQ==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -988,6 +1044,9 @@ packages:
   aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
 
+  async-mutex@0.4.1:
+    resolution: {integrity: sha512-WfoBo4E/TbCX1G95XTjbWTE3X2XLG0m1Xbv2cwOtuPdyH9CZvnaA5nCt1ucjaKEgW2A5IF71hxrRhr83Je5xjA==}
+
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
@@ -1008,6 +1067,9 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
+  base64-js@1.5.1:
+    resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
@@ -1023,6 +1085,9 @@ packages:
     resolution: {integrity: sha512-btwCFJVjI4YWDNfau8RhZ+B1Q/VLoUITrm3RlP6y1tYGWIOa+InuYiRGXUBXo8nA1qKmHMyLB/iVQg5TT4eFoA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
+
+  buffer@5.7.1:
+    resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
   busboy@1.6.0:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
@@ -1053,6 +1118,10 @@ packages:
 
   character-reference-invalid@1.1.4:
     resolution: {integrity: sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==}
+
+  chart.js@4.4.4:
+    resolution: {integrity: sha512-emICKGBABnxhMjUjlYRR12PmOXhJ2eJjEHL2/dZlWjxRAZT1D8xplLFq5M0tMQK8ja+wBS/tuVEJB5C6r7VxJA==}
+    engines: {pnpm: '>=8'}
 
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -1108,12 +1177,19 @@ packages:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
+  cross-fetch@3.1.8:
+    resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
+
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
 
   crypto-js@4.2.0:
     resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+
+  crypto@1.0.1:
+    resolution: {integrity: sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig==}
+    deprecated: This package is no longer supported. It's now a built-in Node module. If you've depended on crypto, you should switch to the one that's built-in.
 
   css-tree@2.3.1:
     resolution: {integrity: sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==}
@@ -1169,6 +1245,10 @@ packages:
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
 
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
@@ -1223,6 +1303,9 @@ packages:
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
+
+  fit-file-parser@1.20.0:
+    resolution: {integrity: sha512-LRRVGWkavQCF386MJAWMtX2p+wPNcNi1JwILb4v+3M/DUhwAHOvmV+v4BWmsBDMQm4h06VXw3vmAcaSPkP56+A==}
 
   foreground-child@3.3.0:
     resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
@@ -1313,6 +1396,9 @@ packages:
 
   humanize-ms@1.2.1:
     resolution: {integrity: sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==}
+
+  ieee754@1.2.1:
+    resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
   inline-style-parser@0.1.1:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
@@ -1817,6 +1903,11 @@ packages:
   pretty-format@3.8.0:
     resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
 
+  prisma@5.19.1:
+    resolution: {integrity: sha512-c5K9MiDaa+VAAyh1OiYk76PXOme9s3E992D7kvvIOhCrNsBQfy2mP2QAQtX0WNj140IgG++12kwZpYB9iIydNQ==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+
   prismjs@1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
     engines: {node: '>=6'}
@@ -1836,6 +1927,12 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  react-chartjs-2@5.2.0:
+    resolution: {integrity: sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==}
+    peerDependencies:
+      chart.js: ^4.1.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
@@ -2081,6 +2178,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  terra-api@1.4.5:
+    resolution: {integrity: sha512-bthmfgyU8ZHtXBXZJoP4yhkPPAiUHOauU1pFfLVB4tuwGhCkb02I+NESm97BTf7jlHqGAibWetOD3eyl89M73w==}
+
   thenify-all@1.6.0:
     resolution: {integrity: sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==}
     engines: {node: '>=0.8'}
@@ -2117,6 +2217,9 @@ packages:
   type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
+
+  typeface-poppins@1.1.13:
+    resolution: {integrity: sha512-VLNaET8kK7M3gPGjtKhr4/Iw6aseM2FLdiEGevlqXWD9b8QlzqZC4ro7sP78L9HJnOo2SUVvwJUeCn82gBcNqw==}
 
   typescript@5.5.4:
     resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
@@ -2474,6 +2577,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@kurkle/color@0.3.2': {}
+
   '@next/env@14.2.6': {}
 
   '@next/swc-darwin-arm64@14.2.6':
@@ -2521,6 +2626,31 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@prisma/client@5.19.1(prisma@5.19.1)':
+    optionalDependencies:
+      prisma: 5.19.1
+
+  '@prisma/debug@5.19.1': {}
+
+  '@prisma/engines-version@5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3': {}
+
+  '@prisma/engines@5.19.1':
+    dependencies:
+      '@prisma/debug': 5.19.1
+      '@prisma/engines-version': 5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3
+      '@prisma/fetch-engine': 5.19.1
+      '@prisma/get-platform': 5.19.1
+
+  '@prisma/fetch-engine@5.19.1':
+    dependencies:
+      '@prisma/debug': 5.19.1
+      '@prisma/engines-version': 5.19.1-2.69d742ee20b815d88e17e54db4a2a7a3b30324e3
+      '@prisma/get-platform': 5.19.1
+
+  '@prisma/get-platform@5.19.1':
+    dependencies:
+      '@prisma/debug': 5.19.1
 
   '@radix-ui/number@1.1.0': {}
 
@@ -2910,6 +3040,10 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
+  '@react-buddy/ide-toolbox@2.4.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
   '@swc/counter@0.1.3': {}
 
   '@swc/helpers@0.5.5':
@@ -2924,6 +3058,13 @@ snapshots:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.10
+
+  '@tryterra/terra-ui@0.2.0(react@18.3.1)':
+    dependencies:
+      '@react-buddy/ide-toolbox': 2.4.0(react@18.3.1)
+      typeface-poppins: 1.1.13
+    transitivePeerDependencies:
+      - react
 
   '@types/debug@4.1.12':
     dependencies:
@@ -3107,6 +3248,10 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
+  async-mutex@0.4.1:
+    dependencies:
+      tslib: 2.7.0
+
   asynckit@0.4.0: {}
 
   autoprefixer@10.4.20(postcss@8.4.41):
@@ -3125,6 +3270,8 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
+  base64-js@1.5.1: {}
+
   binary-extensions@2.3.0: {}
 
   brace-expansion@2.0.1:
@@ -3141,6 +3288,11 @@ snapshots:
       electron-to-chromium: 1.5.13
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
+
+  buffer@5.7.1:
+    dependencies:
+      base64-js: 1.5.1
+      ieee754: 1.2.1
 
   busboy@1.6.0:
     dependencies:
@@ -3161,6 +3313,10 @@ snapshots:
   character-entities@2.0.2: {}
 
   character-reference-invalid@1.1.4: {}
+
+  chart.js@4.4.4:
+    dependencies:
+      '@kurkle/color': 0.3.2
 
   chokidar@3.6.0:
     dependencies:
@@ -3214,6 +3370,12 @@ snapshots:
 
   cookie@0.6.0: {}
 
+  cross-fetch@3.1.8:
+    dependencies:
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
+
   cross-spawn@7.0.3:
     dependencies:
       path-key: 3.1.1
@@ -3221,6 +3383,8 @@ snapshots:
       which: 2.0.2
 
   crypto-js@4.2.0: {}
+
+  crypto@1.0.1: {}
 
   css-tree@2.3.1:
     dependencies:
@@ -3259,6 +3423,8 @@ snapshots:
     dependencies:
       no-case: 3.0.4
       tslib: 2.7.0
+
+  dotenv@16.4.5: {}
 
   eastasianwidth@0.2.0: {}
 
@@ -3305,6 +3471,10 @@ snapshots:
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
+
+  fit-file-parser@1.20.0:
+    dependencies:
+      buffer: 5.7.1
 
   foreground-child@3.3.0:
     dependencies:
@@ -3388,6 +3558,8 @@ snapshots:
   humanize-ms@1.2.1:
     dependencies:
       ms: 2.1.3
+
+  ieee754@1.2.1: {}
 
   inline-style-parser@0.1.1: {}
 
@@ -4019,6 +4191,12 @@ snapshots:
 
   pretty-format@3.8.0: {}
 
+  prisma@5.19.1:
+    dependencies:
+      '@prisma/engines': 5.19.1
+    optionalDependencies:
+      fsevents: 2.3.3
+
   prismjs@1.27.0: {}
 
   prismjs@1.29.0: {}
@@ -4036,6 +4214,11 @@ snapshots:
   property-information@6.5.0: {}
 
   queue-microtask@1.2.3: {}
+
+  react-chartjs-2@5.2.0(chart.js@4.4.4)(react@18.3.1):
+    dependencies:
+      chart.js: 4.4.4
+      react: 18.3.1
 
   react-dom@18.3.1(react@18.3.1):
     dependencies:
@@ -4342,6 +4525,15 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
+  terra-api@1.4.5:
+    dependencies:
+      async-mutex: 0.4.1
+      cross-fetch: 3.1.8
+      crypto: 1.0.1
+      dotenv: 16.4.5
+    transitivePeerDependencies:
+      - encoding
+
   thenify-all@1.6.0:
     dependencies:
       thenify: 3.3.1
@@ -4369,6 +4561,8 @@ snapshots:
   tslib@2.7.0: {}
 
   type-fest@2.19.0: {}
+
+  typeface-poppins@1.1.13: {}
 
   typescript@5.5.4: {}
 
