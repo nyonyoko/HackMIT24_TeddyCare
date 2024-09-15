@@ -14,7 +14,6 @@ import { Widget } from './components/TerraWidget'
 
 
 export default async function () {
-  export default function Patient() {
   return (
     <>
   <div className="main-container flex column" style={{}}>
