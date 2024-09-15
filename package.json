@@ -24,11 +24,13 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
+    "@tryterra/terra-ui": "^0.2.0",
     "@vercel/analytics": "^1.3.1",
     "@vercel/kv": "^2.0.0",
     "ai": "^3.3.17",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "fit-file-parser": "^1.20.0",
     "framer-motion": "^11.3.30",
     "geist": "^1.3.1",
     "nanoid": "^5.0.7",
@@ -46,6 +48,7 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "sonner": "^1.5.0",
+    "terra-api": "^1.4.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
